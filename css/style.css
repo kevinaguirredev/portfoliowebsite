@@ -7,25 +7,162 @@ GENERAL CSS
 
 
 * {
+    
     margin: 0;
     padding: 0;
 }
 
 body {
+    
     font-family: "Poppins", sans-serif;
 }
 
 html {
+    
     scroll-behavior: smooth;
 }
 
 p {
+    
     color: rgb(85, 85, 85);
+}
+
+/* Default, show light icon in light mode */
+#sun-icon {
+    
+    display: none;
+}
+
+body[data-theme="dark"] #moon-icon {
+    
+    display: none;
+}
+
+body[data-theme="dark"] #sun-icon {
+    
+    display: inline-block;
+}
+
+body[data-theme="dark"] {
+    /* #1c1c1e */
+    /* background-color: #121212; */
+    background-color: #1c1c1e;
+    color: #E0E0E0;
+}
+
+body[data-theme="dark"] a {
+
+    /* background-color: #121212; */
+    color: #A0A0A0;
+}
+
+body[data-theme="dark"] a:hover {
+    
+    color: #A9D1F2;
+}
+
+body[data-theme="dark"] #theme-btn{
+
+    border-color: #A0A0A0;
+}
+
+body[data-theme="dark"] .theme-btn-class {
+    
+    
+    color: #A0A0A0;
+}
+
+body[data-theme="dark"] .section__text__p1 {
+    
+    color: #D0D0D0;
+}
+
+body[data-theme="dark"] .section__text__p2 {
+    
+    color: #D0D0D0;
+}
+
+body[data-theme="dark"] .btn-color-1 {
+
+    border: #272729 0.1rem solid;
+    background: #272729;
+    color: #fefefe;
+}
+
+body[data-theme="dark"] .main-profile-pic, .about-pic {
+
+    filter: brightness(0.91) contrast(0.97);
+}
+
+body[data-theme="dark"] .icon {
+    
+    opacity: 0.92;
+}
+
+body[data-theme="dark"] .about-details-container p {
+
+    color: #A5A5A5;
+}
+
+body[data-theme="dark"] .details-container {
+
+    border-color: #48484A;
+}
+
+body[data-theme="dark"] .experience-sub-title {
+
+    color: #E0E0E0;
+}
+
+body[data-theme="dark"] .article-container article p{
+
+    color: #A5A5A5;
+}
+
+body[data-theme="dark"] .contact-info-upper-container {
+    
+    border-color: #48484A;
+}
+
+body[data-theme="dark"] footer p {
+
+    color: #A5A5A5;
+}
+
+body[data-theme="dark"] #hambgr-icon span {
+
+    background-color: #E0E0E0;
+}
+
+body[data-theme="dark"] .menu-links {
+    
+    background-color: #2C2C2E;
+}
+
+#theme-btn {
+    
+    background-color: transparent; /* Make the button background transparent */
+    border: 2px solid black; /* Set the border color to match the current text color */
+    border-radius: 50%; /* Make the button circular */
+    width: 50px; /* Set the width */
+    height: 50px; /* Set the height */
+    display: flex; /* Use flexbox to align the icon */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Change the cursor to indicate it's clickable */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for background and border */
+}
+
+
+#theme-btn:focus:not(:focus-visible) {
+    
+    outline: none; /* Suppress outline for mouse/touch users */
 }
 
 /* TRANSITION */
 
 a, .btn {
+    
     transition: all 300ms ease;
 }
 
@@ -33,29 +170,34 @@ a, .btn {
 /* DESKTOP NAV */
 
 nav, .nav-links {
+    
     display: flex;
     flex-direction: row;
 }
 
 nav {
+    
     justify-content: space-around;
     align-items: center;
     height: 17vh;
 }
 
 .nav-links {
+    
     gap: 2rem;
     list-style: none;
     font-size: 1.5rem;
 }
 
 a {
+    
     color: black;
     text-decoration: none;
     text-decoration-color: white;
 }
 
 a:hover {
+    
     color: grey;
     text-decoration: underline;
     text-underline-offset: 1rem;
@@ -63,25 +205,44 @@ a:hover {
 }
 
 .logo {
+    
     font-size: 2rem;
 }
 
 .logo:hover {
+    
     cursor: default;
+}
+
+/* Added two rows on 7/27/24 */
+#desktop-nav {
+    
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 /* HAMBURGER MENU */
 
 #hamburger-nav {
+    
     display: none;
 }
 
 .hamburger-menu {
+    
     position: relative;
     display: inline-block;
 }
 
 .hamburger-icon {
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -95,10 +256,11 @@ a:hover {
     width: 100%;
     height: 2px;
     background-color: black;
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-links {
+    
     position: absolute;
     top: 100%;
     right: 0;
@@ -106,54 +268,65 @@ a:hover {
     width: fit-content;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
 }
 
 .menu-links a {
+    
     display: block;
     padding: 10px;
     text-align: center;
     font-size: 1.5rem;
     color: black;
     text-decoration: none;
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-links ul li {
+    
     list-style: none;
 }
 
 .menu-links.open {
+    
     max-height: 300px;
 }
 
 .hamburger-icon.open span:first-child {
+    
     transform: rotate(45deg) translate(10px, 5px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
+    
     opacity: 0;
 }
 
 .hamburger-icon.open span:last-child {
+    
     transform: rotate(-45deg) translate(10px, -5px);
 }
 
 .hamburger-icon span:first-child {
+    
     transform: none;
 }
 
 .hamburger-icon span:first-child {
+    
     opacity: 1;
 }
 
 .hamburger-icon span:first-child {
+    
     transform: none;
 }
 
 /* GENERAL HTML SECTIONS */
 
 section {
+    
     padding-top: 4vh;
     height: 96vh;
     margin: 0 10rem;
@@ -162,12 +335,14 @@ section {
 }
 
 .section-container {
+    
     display: flex;
 }
 
 /* PROFILE SECTION */
 
 #profile {
+    
     display: flex;
     justify-content: center;
     gap: 5rem;
@@ -175,6 +350,7 @@ section {
 }
 
 .section__pic-container {
+    
     display: flex;
     height: 400px;
     width: 400px;
@@ -182,29 +358,35 @@ section {
 }
 
 .section__text {
+    
     align-self: center;
     text-align: center;
 }
 
 .section__text p {
+    
     font-weight: 600;
 }
 
 .section__text__p1 {
+    
     text-align: center;
 }
 
 .section__text__p2 {
+    
     font-size: 1.75rem;
     margin-bottom: 1rem;
 }
 
 .title {
+    
     font-size: 3rem;
     text-align: center;
 }
 
 #socials-container {
+    
     display: flex;
     justify-content: center;
     margin-top: 1rem;
@@ -214,11 +396,13 @@ section {
 /* ICONS */
 
 .icon {
+    
     cursor: pointer;
     height: 2rem;
 }
 
 .icon-edu, .icon-exp {
+    
     display: inline-block;
     vertical-align: middle;
     margin-left: 0.5rem;
@@ -226,17 +410,20 @@ section {
 }
 
 .icon-after{
+    
     display: inline;
 }
 /* BUTTONS */
 
 .btn-container {
+    
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
 .btn {
+    
     font-weight: 600;
     transition: all 300ms ease;
     padding: 1rem;
@@ -244,67 +431,88 @@ section {
     border-radius: 2rem;
 }
 
-.btn-color-1, .btn-color-2 {
+.btn-color-1 {
+    
     border: rgb(53, 53, 53) 0.1rem solid;
-}
-
-.btn-color-1:hover, .btn-color-2:hover {
-    cursor: pointer;
-}
-
-.btn-color-1, .btn-color-2:hover {
     background: rgb(53, 53, 53);
     color: white;
 }
 
-.btn-color-2:hover {
+.btn-color-1:hover {
+    
+    cursor: pointer;
+}
+
+/* .btn-color-1 {
+    
+    background: rgb(53, 53, 53);
+    color: white;
+} */
+
+
+/* .btn-color-1, .btn-color-2:hover {
+    
+    background: rgb(53, 53, 53);
+    color: white;
+} */
+
+/* .btn-color-2:hover {
+    
     background: rgb(0, 0, 0);
 }
 
 .btn-color-2 {
+    
     background: none;
 }
 
 .btn-color-2:hover {
+    
     border: rgb(255, 255, 255) 0.1rem solid;
-}
+} */
 
 
 /* ABOUT SECTION */
 
 #about {
+    
     position: relative;
 }
 
 .about-containers {
+    
     margin-bottom: 2rem;
     margin-top: 2rem;
     gap: 2rem;
 }
 
 .about-details-container {  
+    
     flex-direction: column;
     justify-content: center;
 }
 
 .about-containers, .about-details-container {
+    
     display: flex;
 }
 
 .about-pic {
+    
     border-radius: 2rem;
 }
 
 .arrow {
+    
     position: absolute;
     right: -5rem;
     bottom: 2.5rem;
 }
 
 .details-container {
+    
     padding: 1.5rem;
     flex: 1;
-    background: white;
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
@@ -312,11 +520,13 @@ section {
 }
 
 .section-container {
+    
     gap: 4rem;
     height: 80%;
 }
 
 .section__pic-container {
+    
     height: 400px;
     width: 400px;
     margin: auto 0;
@@ -325,11 +535,13 @@ section {
 /* EXPERIENCE */
 
 #experience {
+    
     position: relative;
     height: 70vh;
 }
 
 .experience-sub-title {
+    
     color: rgb(85, 85, 85);
     font-weight: 600;
     font-size: 1.75rem;
@@ -337,12 +549,14 @@ section {
 }
 
 .experience-details-container {
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
 .article-container {
+    
     display: flex;
     text-align: initial;
     flex-wrap: wrap;
@@ -352,6 +566,7 @@ section {
 }
 
 article {
+    
     display: flex;
     width: 10rem;
     /* justify-content: space-around; */
@@ -359,12 +574,14 @@ article {
 }
 
 article .icon {
+    
     cursor: default;
 }
 
 /* CONTACT */
 
 #contact {
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -372,17 +589,19 @@ article .icon {
 }
 
 .contact-info-upper-container {
+    
     display: flex;
     justify-content: center;
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
-    background: (250, 250, 250);
+    /* background: (250, 250, 250); */
     margin: 2rem auto;
     padding: 0.5rem;
 }
 
 .contact-info-container {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -391,24 +610,29 @@ article .icon {
 }
 
 .contact-info-container p {
+    
     font-size: larger;
 }
 
 .contact-icon {
-   cursor: default; 
+   
+    cursor: default; 
 }
 
 .email-icon {
+    
     height: 2.5rem;
 }
 
 /* FOOTER */
 
 footer {
+    
     height: 26vh;
     margin: 0 1rem;
 }
 
 footer p {
+    
     text-align: center;
 }

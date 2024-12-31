@@ -11,16 +11,52 @@
 <body>
     <nav id="desktop-nav">
         <div class="logo">Kevin Aguirre</div>
-        <div>
-            <ul class="nav-links">
+        <div class="nav-container">
+            <button type="button" id="theme-btn" class="theme-btn-class">
+            <svg class="sun" id="sun-icon" width="30" height="30">
+                <circle cx="15" cy="15" r="6" fill="currentColor" />
+                <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                <use href="#ray" transform="rotate(45 15 15)" />
+                <use href="#ray" transform="rotate(90 15 15)" />
+                <use href="#ray" transform="rotate(135 15 15)" />
+                <use href="#ray" transform="rotate(180 15 15)" />
+                <use href="#ray" transform="rotate(225 15 15)" />
+                <use href="#ray" transform="rotate(270 15 15)" />
+                <use href="#ray" transform="rotate(315 15 15)" />
+            </svg>
+            <svg class="moon" id="moon-icon" width="30" height="30">
+                <path
+                  d="
+                    M 23, 5
+                    A 12 12 0 1 0 23, 25
+                    A 12 12 0 0 1 23, 5"
+                />
+              </svg>
+            </button>
+            <ul id="nav-main-links" class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <!-- <li><a href="#projects">Projects</a></li> -->
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <nav id="hamburger-nav">
+                <div class="hamburger-menu">
+                    <div id="hambgr-icon" class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="menu-links">
+                        <ul>
+                            <li><a id="hamburger-about" href="#about">About</a></li>
+                            <li><a id="hamburger-exp" href="#experience">Experience</a></li>
+                            <li><a id="hamburger-contact" href="#contact">Contact</a></li>
+                        </ul>              
+                    </div>
+                </div>
+            </nav>
         </div>
     </nav>
-    <nav id="hamburger-nav">
+    <!-- <nav id="hamburger-nav">
         <div class="logo">Kevin Aguirre</div>
         <div class="hamburger-menu">
             <div id="hambgr-icon" class="hamburger-icon">
@@ -32,23 +68,21 @@
                 <ul>
                     <li><a id="hamburger-about" href="#about">About</a></li>
                     <li><a id="hamburger-exp" href="#experience">Experience</a></li>
-                    <!-- <li><a id="hamburger-proj" href="#projects">Projects</a></li> -->
                     <li><a id="hamburger-contact" href="#contact">Contact</a></li>
                 </ul>              
             </div>
         </div>
-    </nav>
+    </nav> -->
     <section id="profile">
         <div class="section__pic-container">
-            <img src="./assets/kevin.png" alt="Kevin Aguirre profile picture">
+            <img class="main-profile-pic" src="./assets/kevin.png" alt="Kevin Aguirre profile picture">
         </div>
         <div class="section__text">
             <p class="section__text__p1">Hello, I'm</p>
             <h1 class="title">Kevin Aguirre</h1>
             <p class="section__text__p2">Software Engineer</p>
             <div class="btn-container">
-                <!-- <button id="resumeBtn" class="btn btn-color-2" disabled>Download resume</button> -->
-                <button id="contactBtn" class="btn btn-color-1">Contact Info</button>
+                <button type="button" id="contactBtn" class="btn btn-color-1">Contact Info</button>
             </div>
             <div id="socials-container">
                 <img id="linkedinIcon" class="icon" src="./assets/linkedin.png" alt="Go to my LinkedIn page">
@@ -61,12 +95,12 @@
         <h1 class="title">About Me</h1>
         <div class="section-container">
             <div class="section__pic-container">
-                <img src="./assets/about-pic.png" alt="profile picture" class="about-pic">
+                <img class="about-pic" src="./assets/about-pic.png" alt="profile picture">
             </div>
             <div class="about-details-container">
                 <div class="about-containers">
                     <div class="details-container">
-                        <h3 class="icon-after">Experience</h3><img src="./assets/briefcase.png" alt="Experience icon" class="icon icon-exp">
+                        <h3 class="icon-after">Experience</h3><img src="./assets/computer.png" alt="Experience icon" class="icon icon-exp">
                         <p>5+ years</p>
                         <p>Software Engineer</p>
                     </div>
@@ -88,7 +122,7 @@
                 </div>
             </div>
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
+        <img src="./assets/arrow.png" id="arrow1" class="icon arrow" alt="Arrow icon" onclick="location.href='#experience'">
     </section>
     <section id="experience">
         <p class="section__text__p1">Explore My</p>
@@ -149,20 +183,20 @@
                 </div>
             </div>
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'">
+        <img src="./assets/arrow.png" id="arrow2" class="icon arrow" alt="Arrow icon" onclick="location.href='#contact'">
     </section>
     <section id="contact">
         <p class="section__text__p1">Get in Touch</p>
         <h1 class="title">Contact me</h1>
         <div class="contact-info-upper-container">
             <div class="contact-info-container">
-                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon">
+                <img id="contact-email-icon" src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon">
                 <p><a href="mailto:kevinagr359@gmail.com">kevinagr359@gmail.com</a></p>
             </div>
-            <div class="contact-info-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
+            <!-- <div class="contact-info-container">
+                <img id="contact-linkedin-icon" src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
                 <p><a href="https://www.linkedin.com/in/kevinaguirre1">LinkedIn</a></p>
-            </div>
+            </div> -->
         </div>
     </section>
     <footer>
@@ -171,13 +205,12 @@
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <!-- <li><a href="#projects">Projects</a></li> -->
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
         <p>Copyright &#169 <span id="spanYear"></span> Kevin Aguirre. All Rights Reserved.</p>
     </footer>
-    <script src="..\js\script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
